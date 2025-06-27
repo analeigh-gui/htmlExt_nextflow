@@ -1,0 +1,5 @@
+﻿./input_html/AT206-multiomic_Pipeline_Report.html;multiome;demo
+./input_html/AT209-atacOnly_Pipeline_Report.html;atac;demo
+./input_html/Targeted-AbSeq_Pipeline_Report.html;targeted+abseq;demo
+./input_html/WTA-AbSeq-SMK_Pipeline_Report.html;wta+abseq+smk;demo
+./input_html/WTA-VDJ_Pipeline_Report.html;wta+vdj;demo

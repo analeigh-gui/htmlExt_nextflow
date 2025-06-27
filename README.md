@@ -1,5 +1,10 @@
 # HTML Data Extraction Pipeline
 
+[![Nextflow](https://img.shields.io/badge/Nextflow-21.04+-brightgreen)](https://www.nextflow.io/)
+[![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)](https://www.python.org/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
+
+
 A Nextflow pipeline for extracting tabular data from HTML reports and consolidating them into Excel files.
 
 ## Overview
@@ -18,7 +23,7 @@ This pipeline processes HTML reports (typically from Rhapsody primary pipelines)
 ## Requirements
 
 - [Nextflow](https://www.nextflow.io/) (>= 21.04)
-- [Docker](https://www.docker.com/) or [Singularity](https://sylabs.io/singularity/)
+- [Docker](https://www.docker.com/)
 
 ## Quick Start
 
@@ -55,10 +60,6 @@ The pipeline expects a CSV file (default: `input.csv`) with three columns separa
 Example:
 ```csv
 ./input_html/AT206-multiomic_Pipeline_Report.html;multiome;demo
-./input_html/AT209-atacOnly_Pipeline_Report.html;atac;demo
-./input_html/Targeted-AbSeq_Pipeline_Report.html;targeted+abseq;demo
-./input_html/WTA-AbSeq-SMK_Pipeline_Report.html;wta+abseq+smk;demo
-./input_html/WTA-VDJ_Pipeline_Report.html;wta+vdj;demo
 ```
 
 ## Output
@@ -192,32 +193,17 @@ Modify the filtering logic in `extract_html.py` to change which rows are kept or
    - Ensure all individual Excel files are generated successfully
    - Check for file permission issues in output directories
 
-### Debug Mode
-Enable debugging by adding debug output to `extract_html.py`:
-
-```python
-# Add to the process loop
-with open("debug_output.txt", "w") as debug_file:
-    debug_file.write(f"Processing: {html_path}\n")
-    debug_file.write(f"Tables found: {len(tables_with_titles)}\n")
-    debug_file.write(f"DataFrame shape: {df.shape}\n")
-```
-
 ## Example Use Cases
 
 - **Bioinformatics Pipeline Reports**: Process output from single-cell analysis pipelines
 - **Quality Control Dashboards**: Extract metrics from HTML QC reports
 - **Multi-Sample Analysis**: Consolidate results across multiple experimental conditions
 
-
 ## License
 
 Place holder for license information.
-
 
 ## Changelog
 
 ### v1.0.0
 - Initial release
-- HTML table extraction with metadata
-- Excel consolidation functionality
